@@ -6,20 +6,20 @@ require('electron-reload')(__dirname, {
 });
 
 app.on('ready', () => {
-	let win = new BrowserWindow({
-	  width: 800,
-		height: 600
-	})
+  let win = new BrowserWindow({
+    width: 800,
+    height: 600
+  })
 
 
-	win.loadURL(path.join('file://', __dirname, 'app', 'html','index.html'))
+  win.loadURL(path.join('file://', __dirname, 'app', 'html','index.html'))
 })
 
 exports.openWindow = () => {
-	let win = new BrowserWindow({
-		width: 400,
-		height: 300
-	})
+  let win = new BrowserWindow({
+    width: 400,
+    height: 300
+  })
 
-	win.loadURL(`file://${__dirname}/renata.html`)
+  win.loadURL(`file://${__dirname}/renata.html`)
 }
