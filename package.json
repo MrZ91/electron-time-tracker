@@ -1,11 +1,11 @@
 {
-  "name": "electron",
+  "name": "electron-time-tracker",
   "version": "0.0.1",
   "description": "",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js",
-    "watch": "watchify app/app.js -o app/js/application.js --debug --verbose"
+    "watch": "watchify app/app.js -o app/js/application.js --debug --verbose -t [ babelify --presets [ es2015 react ] ]"
   },
   "author": "",
   "license": "BSD-2-Clause",
@@ -16,8 +16,10 @@
     "babel-preset-react": "^6.23.0",
     "babelify": "^7.2.0",
     "electron": "^1.4.13",
+    "electron-react-devtools": "^0.4.0",
     "electron-reload": "^1.1.0",
     "electron-winstaller": "^2.5.2",
+    "node-sass": "^4.5.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },
@@ -26,10 +28,20 @@
     "react-dom": "^15.4.2"
   },
   "presets": [
-    "es2016",
+    "es2015",
     "react"
   ],
   "browserify": {
-    "transform": [["babelify", { "presets": ["es2015", "react"] }]]
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
   }
 }

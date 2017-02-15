@@ -1,0 +1,22 @@
+.application {
+  background-color: #333333;
+  padding: 5px;
+}
+
+.application__container {
+  background-color: #FFFFFF;
+  padding: 5px;
+  margin: 5px;
+}
+
+.application__new-time-log {
+  background-color: #bbbbbb;
+  padding: 5px;
+  margin: 5px;
+}
+
+.application__time-logs {
+  background-color: #EEEEEE;
+  padding: 5px;
+  margin: 5px;
+}
