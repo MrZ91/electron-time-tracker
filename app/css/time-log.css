@@ -2,4 +2,18 @@
   border: solid;
   border-color: #ff003f;
   margin: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.time-log__button {
+  margin-right: 10px;
+}
+
+.time-log__description {
+  margin: 0px 5px 0px 5px;
+}
+
+.time-log__timer {
+  margin: 0px 5px 0px 5px;
 }

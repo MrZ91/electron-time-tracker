@@ -1,18 +1,23 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const Datastore = require('nedb-core')
+
+var timeLogStorage = new Datastore({ filename: 'data/timelogs', autoload: true })
 
 require('electron-reload')(__dirname, {
-  electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+  electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+  ignored: [/node_modules|[\/\\]\./, /data/]
 });
 
+app.timeLogStorage = timeLogStorage
+
 app.on('ready', () => {
-  let win = new BrowserWindow({
+  let mainWindow = new BrowserWindow({
     width: 800,
     height: 600
   })
 
-
-  win.loadURL(path.join('file://', __dirname, 'app', 'html','index.html'))
+  mainWindow.loadURL(path.join('file://', __dirname, 'app', 'html','index.html'))
 })
 
 exports.openWindow = () => {

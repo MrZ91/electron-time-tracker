@@ -4,7 +4,7 @@ import {TimeLog} from './time_log.component'
 export const TimeLogs = (props) => {
   return(
     <div className = "application__time-logs">
-      {props.timeLogs.map(timeLog => <TimeLog key = {timeLog.id} {...timeLog} />)}  
+      {props.timeLogs.map(timeLog => <TimeLog key = {timeLog._id} handleUpdate = {props.handleUpdate} {...timeLog} />)}  
     </div>
-    )
+  )    
 }
